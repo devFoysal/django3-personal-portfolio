@@ -1,0 +1,23 @@
+
+    {% extends 'blog/layout.html' %}
+
+    {% block title %} Blog Detail {% endblock %}
+    {% block content %}
+ <div class="container">
+    <div class="row projects">
+           <div class="col-md-12">
+            <div class="project-card card">
+                <div class="thumbnail">
+                        <img class="img-fluid" src="{{blog.thumbnail.url}}" alt="">
+                </div>
+                <div class="project-card-body card-body">
+                    <h2>
+                       {{blog.title}}
+                    </h2>
+                    <p>{{blog.description}}</p>
+                </div>
+            </div>
+           </div>
+   </div>
+</div>
+{% endblock %}

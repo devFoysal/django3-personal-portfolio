@@ -1,0 +1,28 @@
+
+    {% extends 'blog/layout.html' %}
+
+    {% block title %} Blog {% endblock %}
+    {% block content %}
+
+ <div class="container">
+        <div class="row projects">
+            {% for blog in blogs %}
+               <div class="col-md-4">
+                <div class="project-card card">
+                    <div class="thumbnail">
+                        <a href="{% url 'blog:detail' blog.id %}">
+                            <img class="img-fluid" src="{{blog.thumbnail.url}}" alt="">
+                        </a>
+                    </div>
+                    <div class="project-card-body card-body">
+                        <h2>
+                            <a href="{% url 'blog:detail' blog.id %}">{{blog.title}}</a>
+                        </h2>
+                        <p>{{blog.description}}</p>
+                    </div>
+                </div>
+               </div>
+            {% endfor %}
+       </div>
+ </div>
+ {% endblock %}
